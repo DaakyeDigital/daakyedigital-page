@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import ContactForm from './components/ContactForm';
 
 export default function Home() {
@@ -15,32 +16,17 @@ export default function Home() {
       <div className="flex items-center justify-center mb-16">
         {/* Logo Image */}
         <div className="relative">
-          <img 
+          <Image 
             src="/logo.png" 
             alt="Daakye Digital Logo" 
-            className="w-40 h-40 object-contain"
-            onError={(e) => {
+            width={160}
+            height={160}
+            className="object-contain"
+            onError={() => {
               // Fallback if image doesn't load
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-              const fallback = target.nextElementSibling as HTMLElement;
-              if (fallback) fallback.style.display = 'block';
+              console.log('Logo image failed to load');
             }}
           />
-          {/* Fallback logo if image doesn't load */}
-          <div className="hidden w-16 h-16 bg-gradient-to-b from-orange-500 to-pink-500 rounded-r-full flex items-center justify-center relative overflow-hidden">
-            <div className="absolute left-2 top-2 w-8 h-8">
-              <svg viewBox="0 0 32 32" fill="none" className="w-full h-full">
-                <path 
-                  d="M24 8L8 24M8 24L8 16M8 24L16 24" 
-                  stroke="white" 
-                  strokeWidth="3" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -62,7 +48,7 @@ export default function Home() {
         onClick={openContactForm}
         className="bg-gradient-to-r from-orange-500 to-pink-500 hover:opacity-90 text-white font-bold px-12 py-4 rounded-full text-lg transition-all duration-200 transform hover:scale-105"
       >
-        Let's talk
+        Let&apos;s talk
       </button>
 
       {/* Footer */}

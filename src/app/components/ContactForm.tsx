@@ -54,7 +54,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -69,7 +69,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
         <div className="p-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">Let's Talk</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Let&apos;s Talk</h2>
             <button
               onClick={onClose}
               className="text-gray-400 hover:text-gray-600 transition-colors"
@@ -142,7 +142,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
             {/* Status Messages */}
             {submitStatus === 'success' && (
               <div className="text-green-600 text-center text-sm">
-                Message sent successfully! We'll get back to you soon.
+                Message sent successfully! We&apos;ll get back to you soon.
               </div>
             )}
             {submitStatus === 'error' && (
