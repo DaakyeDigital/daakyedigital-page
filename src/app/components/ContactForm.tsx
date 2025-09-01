@@ -54,7 +54,8 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
       } else {
         setSubmitStatus('error');
       }
-    } catch {
+    } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

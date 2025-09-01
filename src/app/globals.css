@@ -47,8 +47,3 @@ body {
   font-style: normal;
   font-display: swap;
 }
-
-/* Custom utility classes for the Aeonik font */
-.font-aeonik {
-  font-family: "Aeonik TRIAL", Arial, Helvetica, sans-serif;
-}
